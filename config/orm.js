@@ -9,13 +9,36 @@ var connection = require("./connection");
 
 
 var orm = {
-    selectAll: function() {
-      // var queryString = "SELECT * FROM ? WHERE ? = ?";
-      connection.query("SELECT * FROM burgers WHERE devoured = 0", function(err, result) {
+    selectAll: function(tableInput, cb) {
+      var queryString = "SELECT * FROM " + tableInput + ";";
+      connection.query(queryString, function(err, result) {
         if (err) throw err;
-        console.log(result);
+        cb(result);
+      });
+    },
+
+    // INSERT INTO burgers (burger_name, devoured) VALUES ("New Bacon-Ings Burger", 0)
+    insertOne: function(tableInput, burger_name, cb) {
+      var queryString = "INSERT INTO " + tableInput + " VALUES (" + burger_name + ", 0);"
+      console.log(queryString);
+
+      connection.query(queryString, function(err, result) {
+        if (err) throw err;
+        cb(result);
       });
     }
+
+
+    // selectAll: function() {
+    //   // var queryString = "SELECT * FROM ? WHERE ? = ?";
+    //   connection.query("SELECT * FROM burgers WHERE devoured = 0", function(err, result) {
+    //     if (err) throw err;
+    //     console.log(result);
+    //   });
+    // }
+
+
+    
     // insertOne: function(whatToSelect, table, orderCol) {
     //   var queryString = "SELECT ?? FROM ?? ORDER BY ?? DESC";
     //   console.log(queryString);
