@@ -4,8 +4,6 @@ var router = express.Router();
 
 var burger = require("../models/burger");
 
-// Create the router for the app, and export the router at the end of your file.
-
 router.get("/", function(req, res) {
     burger.selectAll(function(data) {
         var hbsObject = {
@@ -30,7 +28,7 @@ router.put("/burger/:id", function(req, res) {
   
     // console.log("condition", condition);
     // console.log(req.body.id);
-    console.log(req.body.devoured);
+    // console.log(req.body.devoured);
 
     burger.updateOne(condition, function(result) {
         if (result.changedRows == 0) {
@@ -40,18 +38,7 @@ router.put("/burger/:id", function(req, res) {
             res.status(200).end();
           }
     });
-  
-    // burger.updateOne({
-    //   burger: req.body.burger
-    // }, condition, function(result) {
-    //   if (result.changedRows == 0) {
-    //     // If no rows were changed, then the ID must not exist, so 404
-    //     return res.status(404).end();
-    //   } else {
-    //     res.status(200).end();
-    //   }
-    // });
-  });
+});
 
 // Route to print all burgers NOT devoured
 // router.get("/", function(req, res) {

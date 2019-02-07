@@ -7,8 +7,6 @@
 		{{#unless devoured}}
 			<li>
 				<p>{{this.id}}. {{this.burger_name}}
-				{{!-- <button type="button" class="btn btn-secondary">Devour It!</button>
-        <button class="change-devour" data-id="{{id}}" data-newsleep="{{sleep}}"></button> --}}
 				<button type="button" class="change-devoured btn btn-secondary" data-id="{{id}}" data-newdevoured="{{devoured}}">Devour It!</button>
         </p>
 			</li>
@@ -27,29 +25,6 @@
 		{{/if}}
 	{{/each}}
 </ul>
-
-{{!-- <form action="/" method="POST">
-	<textarea type="text" name="task"></textarea>
-
-	<button type="submit">Submit</button>
-</form> --}}
-
-{{!-- <form class="create-form">
-
-  <div class="form-group">
-    <label for="ca">Burger Name:</label>
-    <input type="text" id="ca" name="name">
-  </div>
-
-  <button type="submit">Add Burger</button>
-</form> --}}
-
-
-{{!-- <h2>Add a Burger</h2>
-<form id="addburger" class="button-size">
-	<textarea type="text" name="burger" id="burg"></textarea>
-	<button type="submit">Add Burger</button>
-</form> --}}
 
 <h2>Add a Burger</h2>
 <form class="create-form">
@@ -72,7 +47,6 @@
 
     var newBurger = {
       name: $("#burg").val().trim(),
-      //sleepy: $("[name=sleepy]:checked").val().trim()
     };
 
     // Send the POST request.
@@ -112,29 +86,4 @@
     );
   });
 
-
-  /*$("#addburger").on("submit", function(event) {
-    
-    event.preventDefault();
-
-    var newBurger = {
-      burger_name: $("#burg [name=burger]").val().trim()
-    };
-
-    
-
-    console.log(newBurger);
-
-    // Send the POST request.
-    $.ajax("/burger", {
-      type: "POST",
-      data: newBurger
-    }).then(
-      function() {
-        console.log("added new burger");
-        // Reload the page to get the updated list
-        location.reload();
-      }
-    );
-  });*/
 </script>
