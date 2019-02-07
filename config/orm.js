@@ -26,6 +26,25 @@ var orm = {
         if (err) throw err;
         cb(result);
       });
+    },
+
+    // UPDATE burgers SET devoured = 1 WHERE id =  4;
+    update: function(table, condition, cb) {
+      var queryString = "UPDATE " + table + " SET devoured = 1 WHERE " + condition + ";";
+  
+      // queryString += " SET ";
+      // queryString += objToSql(objColVals);
+      // queryString += " WHERE ";
+      // queryString += condition;
+  
+      console.log(queryString);
+      connection.query(queryString, function(err, result) {
+        if (err) {
+          throw err;
+        }
+  
+        cb(result);
+      });
     }
 
 
