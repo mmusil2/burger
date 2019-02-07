@@ -19,7 +19,7 @@ var orm = {
 
     // INSERT INTO burgers (burger_name, devoured) VALUES ("New Bacon-Ings Burger", 0)
     insertOne: function(tableInput, burger_name, cb) {
-      var queryString = "INSERT INTO " + tableInput + " VALUES (" + burger_name + ", 0);"
+      var queryString = "INSERT INTO " + tableInput + "(burger_name, devoured) " + "VALUES ('" + burger_name + "', 0);"
       console.log(queryString);
 
       connection.query(queryString, function(err, result) {

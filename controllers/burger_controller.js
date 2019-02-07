@@ -18,13 +18,9 @@ router.get("/", function(req, res) {
 });
 
 router.post("/burger", function(req, res) {
-    // ************************************
-    // NEED TO FIX returning undefined (req.body.name)
-    // ************************************
     console.log(req.body.name);
     burger.insertOne(req.body.name, function(result) {
         res.json({ id: result.insertId });
-        console.log("working?")
     });
 });
 
