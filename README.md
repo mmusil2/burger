@@ -10,3 +10,11 @@ Express, Node.js, MySQL, Handlebars, Javascript, JQuery, HTML, CSS, Bootstrap, H
 ## App Description
 Whenever a user submits a burger's name, the app will display the burger on the left side of the page -- waiting to be devoured. Each burger in the waiting area also has a "Devour it!" button. When the user clicks it, the burger will move to the right side of the page.
 
+## *Enter a burger you want to eat and click the "Submit" button*
+![Submit GIF](gifs/burger1.gif)
+
+## *Select the "Devour It!" button to eat the burger and place it to the rightside of the page* 
+![Devour GIF](gifs/burger2.gif)
+
+
+##### *Deployed on Heroku*
