@@ -13,7 +13,7 @@ Whenever a user submits a burger's name, the app will display the burger on the 
 ## *Enter a burger you want to eat and click the "Submit" button*
 ![Submit GIF](gifs/burger1.gif)
 
-## *Select the "Devour It!" button to eat the burger and place it to the rightside of the page* 
+## *Select the "Devour It!" button to eat the burger and place it to the right side of the page* 
 ![Devour GIF](gifs/burger2.gif)
 
 
